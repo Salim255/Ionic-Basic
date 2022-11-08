@@ -36,21 +36,26 @@
                 <ion-card-content>
                   <ion-item>
                     <ion-label position="floating">Expenses Reason</ion-label>
-                    <ion-input placeholder="Enter text" type="text"></ion-input>
+                    <ion-input
+                      placeholder="Enter text"
+                      type="text"
+                      id="input-reason"
+                    ></ion-input>
                   </ion-item>
                   <ion-item>
                     <ion-label position="floating">Expenses Amount</ion-label>
                     <ion-input
                       placeholder="Enter number"
                       type="number"
+                      id="input-amount"
                     ></ion-input>
                   </ion-item>
                   <div margin-vertical text-right>
-                    <ion-button fill="outline" color="danger">
+                    <ion-button fill="outline" color="danger" id="" btn-cancel>
                       <ion-icon slot="start" name="close"></ion-icon
                       >Clear</ion-button
                     >
-                    <ion-button
+                    <ion-button id="btn-confirm"
                       ><ion-icon slot="start" name="add-outline"></ion-icon>Add
                       Expense
                     </ion-button>
@@ -62,5 +67,6 @@
         </ion-grid>
       </ion-content>
     </ion-app>
+    <script src="./app.js"></script>
   </body>
 </html>
