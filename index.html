@@ -26,21 +26,30 @@
         </ion-toolbar>
       </ion-header>
       <ion-content>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title> New Expense </ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-item>
-              <ion-label position="floating">Expenses Reason</ion-label>
-              <ion-input placeholder="Enter text" type="text"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label position="floating">Expenses Amount</ion-label>
-              <ion-input placeholder="Enter number" type="number"></ion-input>
-            </ion-item>
-          </ion-card-content>
-        </ion-card>
+        <ion-grid>
+          <ion-row>
+            <ion-col size-md="6" offset-md="3">
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-title> New Expense </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <ion-item>
+                    <ion-label position="floating">Expenses Reason</ion-label>
+                    <ion-input placeholder="Enter text" type="text"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label position="floating">Expenses Amount</ion-label>
+                    <ion-input
+                      placeholder="Enter number"
+                      type="number"
+                    ></ion-input>
+                  </ion-item>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
       </ion-content>
     </ion-app>
   </body>
