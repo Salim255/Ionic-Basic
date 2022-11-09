@@ -24,10 +24,16 @@ export class RecipesService {
   constructor() {}
 
   getAllRecipes() {
+    console.log('====================================');
+    console.log('from get all');
+    console.log('====================================');
     return [...this.recipes];
   }
 
   getRecipe(recipeId: string) {
+    ('====================================');
+    console.log('from get One');
+    console.log('====================================');
     return { ...this.recipes.find((recipe) => recipe.id === recipeId) };
   }
 }
