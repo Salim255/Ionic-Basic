@@ -25,6 +25,7 @@ export class RecipeDetailPage implements OnInit {
       console.log('====================================');
       if (!paramMap.has('recipeId')) {
         //redirect
+        this.router.navigate(['/recipes']);
         return;
       }
       const recipeId = paramMap.get('recipeId');
@@ -36,13 +37,26 @@ export class RecipeDetailPage implements OnInit {
   }
 
   onDeleteRecipe() {
-    this.alertCtrl.create({
-      header: 'Are you sure',
-      message: 'Do you realy want to delete this recipe ?',
-      buttons: [{}],
-    });
-
-    this.recipesService.deleteRecipe(this.loadedRecipe.id);
-    this.router.navigate(['/recipes']);
+    this.alertCtrl
+      .create({
+        header: 'Are you sure',
+        message: 'Do you realy want to delete this recipe ?',
+        buttons: [
+          {
+            text: 'Cancel',
+            role: 'Cancel',
+          },
+          {
+            text: 'Delete',
+            handler: () => {
+              this.recipesService.deleteRecipe(this.loadedRecipe.id);
+              this.router.navigate(['/recipes']);
+            },
+          },
+        ],
+      })
+      .then((alertEl) => {
+        alertEl.present();
+      });
   }
 }
