@@ -31,9 +31,14 @@ export class RecipesService {
   }
 
   getRecipe(recipeId: string) {
-    ('====================================');
-    console.log('from get One');
-    console.log('====================================');
     return { ...this.recipes.find((recipe) => recipe.id === recipeId) };
+  }
+
+  deleteRecipe(recipeId: string) {
+    console.log('from service delete', recipeId);
+
+    this.recipes = this.recipes.filter((recipe) => {
+      return recipe.id !== recipeId;
+    });
   }
 }
